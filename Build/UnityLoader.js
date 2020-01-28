@@ -866,7 +866,6 @@ var UnityLoader = UnityLoader || {
       var testRequest = idb.open("/idbfs-test");
       testRequest.onerror = function(e) { e.preventDefault(); setupIndexedDB(); }
       testRequest.onsuccess = function() { testRequest.result.close(); setupIndexedDB(idb); }
-      setTimeout(setupIndexedDB, 1000);
     } catch (e) {
       setupIndexedDB();
     }
@@ -1331,7 +1330,6 @@ var UnityLoader = UnityLoader || {
           }
         };
         openRequest.onerror = function () { initDatabase(null); };
-        setTimeout(openRequest.onerror, 1000);
       } catch (e) {
         initDatabase(null);
       }
